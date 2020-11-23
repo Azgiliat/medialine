@@ -1,0 +1,27 @@
+$mobile-width: 360px;
+$laptop-width: 768px;
+$desktop-width: 1440px;
+$mobile: 'min-width: #{$mobile-width}';
+$laptop: 'min-width: #{$laptop-width}';
+$desktop: 'min-width: #{$desktop-width}';
+$mobile-content-width: 90%;
+$laptop-content-width: 90%;
+//fonts
+$main-font: Montserrat;
+$second-font: 'Orbitron';
+//transition
+$transition: 0.3s ease-in-out;
+//colors
+$main-white: #ffffff;
+$main-black: #1e1e1e;
+$main-grey: #eeeeee;
+$dark-green: #116466;
+$good: #00CB6A;
+$error: #EB5757;
+
+:export {
+  mobileWidth: $mobile-width;
+  laptopWidth: $laptop-width;
+  desktopWidth: $desktop-width;
+}
+
