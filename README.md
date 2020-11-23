@@ -1,4 +1,4 @@
-# vibum
+# Medialine
 
 ## Project setup
 ```
