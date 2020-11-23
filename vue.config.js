@@ -1,6 +1,13 @@
 const path = require('path')
+const configureAPI = require('./src/server/conf.js')
 
 module.exports = {
+  devServer: {
+    before: configureAPI,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  },
   chainWebpack: config => {
     config.resolve.alias.set('st', path.resolve(__dirname, 'src/static'));
     ['vue-modules', 'vue', 'normal-modules', 'normal'].forEach(rule => {

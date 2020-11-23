@@ -1,6 +1,7 @@
 import data from '@/json/data.json'
 import names from '@/json/names.json'
 
+// eslint-disable-next-line no-unused-vars
 function requestGoods () {
   return new Promise(resolve => {
     resolve(data.Value.Goods)
@@ -15,16 +16,26 @@ function requestNames () {
 
 export function loadGoods({ commit }) {
   commit('setIsLoading', true)
-  return requestGoods()
+  return this.$axios({
+    method: 'get',
+    url: 'api/about'
+  })
     .then(res => {
-      commit('setGoods', res)
+      console.log(res)
     })
     .catch(err => {
-      console.error(err)
+      console.log(err)
     })
-    .finally(() => {
-      commit('setIsLoading', false)
-    })
+  // return requestGoods()
+  //   .then(res => {
+  //     commit('setGoods', res)
+  //   })
+  //   .catch(err => {
+  //     console.error(err)
+  //   })
+  //   .finally(() => {
+  //     commit('setIsLoading', false)
+  //   })
 }
 
 export function loadNames({ commit }) {
